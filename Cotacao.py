@@ -33,7 +33,9 @@ def checkbox_marcados():
 
 
 def buscar_cotacoes():
+    resultados = []
     moedas_selecionadas = checkbox_marcados()
+
     for moeda in moedas_selecionadas:
         data_final_varias_moedas = calendario_final.get()
         ano_final = data_final_varias_moedas[-4:]
@@ -42,9 +44,13 @@ def buscar_cotacoes():
         link = f'https://economia.awesomeapi.com.br/{moeda}-BRL/?start_date={ano_final}{mes_final}{dia_final}&end_date={ano_final}{mes_final}{dia_final}'
         requisicao_moeda = requests.get(link)
         cotacoes_moeda = requisicao_moeda.json()
+
         for cotacao in cotacoes_moeda:
             valor_cotacao = cotacao.get("bid")
-            print(f'A cotação da moeda {moeda} na data de {data_final_varias_moedas} foi de R$ {valor_cotacao}')
+            resultado = f'A cotação da moeda {moeda} no dia {data_final_varias_moedas} foi de R${valor_cotacao}'
+            resultados.append(resultado)
+
+    texto_cotacoes['text'] = '\n'.join(resultados)
 
 
 janela = tk.Tk()
@@ -118,6 +124,5 @@ botao_cotacoes.grid(row=7 + num_linhas, column=2, sticky='EW', padx=10, pady=10)
 
 texto_cotacoes = tk.Label(text='')
 texto_cotacoes.grid(row=8 + num_linhas, column=0, columnspan=2, pady=10, padx=10, sticky='nsew')
-
 
 janela.mainloop()
