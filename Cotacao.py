@@ -107,7 +107,7 @@ for i, moeda in enumerate(lista_moedas):
     var = tk.StringVar(master=janela)
     var_moedas.append(var)
     checkbox_moedas = ttk.Checkbutton(text=moeda, variable=var)
-    checkbox_moedas.grid(row=6 + i // num_colunas, column=i % num_colunas, padx=10, pady=10)
+    checkbox_moedas.grid(row=6 + i // num_colunas, column=i % num_colunas, padx=10, pady=10, sticky='ew')
 
 
 data_final = tk.Label(text='Selecione o dia que deseja pegar a cotação:')
