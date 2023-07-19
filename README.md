@@ -3,4 +3,5 @@
 ## Esse mini projeto tem como objetivo (além de exercitar o uso da biblioteca Tkinter) buscar o valor de diferentes cotações de moedas, seja uma por vez ou várias ao mesmo tempo, tudo isso usando uma API
 ## API usada: https://docs.awesomeapi.com.br/api-de-moedas
 
-![cotacao](https://github.com/Sinuelo/Sistema-de-Busca-de-Cota-es-de-Moedas/assets/98895433/892d61f0-d3b8-4de7-8961-ebd6e37e9ad0)
+![cotacao](https://github.com/Sinuelo/Sistema-de-Busca-de-Cotacoes-de-Moedas/assets/98895433/9a586d60-19e4-4934-a91c-2784ca1644a4)
+
