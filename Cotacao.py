@@ -109,6 +109,13 @@ for i, moeda in enumerate(lista_moedas):
     checkbox_moedas = ttk.Checkbutton(text=moeda, variable=var)
     checkbox_moedas.grid(row=6 + i // num_colunas, column=i % num_colunas, padx=10, pady=10, sticky='ew')
 
+# Configurando espaco entre colunas
+for col in range(num_colunas):
+    janela.grid_columnconfigure(col, weight=1, uniform='group1')
+
+# Configurando espaco entre linhas
+for linha in range(6 + len(lista_moedas) // num_colunas):
+    janela.grid_rowconfigure(linha, weight=1, uniform='group1')
 
 data_final = tk.Label(text='Selecione o dia que deseja pegar a cotação:')
 data_final.grid(row=7 + num_linhas, column=0)
